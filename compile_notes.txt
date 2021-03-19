@@ -1,0 +1,5 @@
+# Assembling
+nasm -f elf <file name>.asm
+
+# Linking
+ld -m elf_i386 -s -o <executable name> <output of assembly step>.o
