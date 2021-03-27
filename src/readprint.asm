@@ -23,7 +23,14 @@ _start:                ;User prompt
    mov ecx, num  
    mov edx, 5          ;5 bytes (numeric, 1 for sign) of that information
    int 80h
-	
+
+   ; Increment the number
+   mov eax, [num]
+   sub eax, '0'
+   inc eax
+   add eax, '0'
+   mov [num], eax
+
    ;Output the message 'The entered number is: '
    mov eax, 4
    mov ebx, 1
